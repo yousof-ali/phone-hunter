@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phone hunter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/632b5f3b09.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="bg-blue-300">
+            <div class="container mx-auto py-4">
+                <div class="flex justify-between px-2  items-center">
+                    <h2 class="text-2xl font-semibold text-gray-700">Hot <span class="text-pink-500">Gadgets</span></h2>
+                    <button class="btn btn-secondary"> Sign Up</button>
+                </div>
+
+            </div>
+        </nav>
+        <div class="bg-[#E4EEF8]">
+            <div class="flex flex-col max-w-screen-2xl mx-auto md:flex-row justify-center items-center gap-8">
+                <div class="flex-1 text-center space-y-2 mt-8 md:mt-0">
+                    <h1 class="text-4xl font-bold text-pink-600">Everything you need!</h1>
+                    <p class="text-gray-400">In this website you can buy gadgets </p>
+                </div>
+                <div class="flex-1 flex justify-center items-center">
+                    <img src="images/many-used-modern-electronic-gadgets-use-white-floor-reuse-recycle-concept-top-view-164230611.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-2 md:px-0 my-12">
+        <section class="mb-6">
+            <div class="flex justify-end items-center">
+                <div>
+                    <input id="search-input" type="text" placeholder="Type a brand" class="bg-gray-100 p-3 outline-0	">
+                </div>
+                <div>
+                    <button onclick="clickButton()" class="btn btn-primary rounded-none">Search</button>
+                </div>
+            </div>
+        </section>
+            
+        <section>
+            <div id="loding" class="flex justify-center items-center hidden">
+                <span class="loading loading-spinner text-error"></span>
+            </div>
+            <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" >
+
+            </div>
+        </section>
+        <section class="mt-16">
+            <div onclick="hiddentitems()" id="hidden-div" class="hidden mb-8">
+                <button  class="btn btn-primary">Show All</button>
+            </div>
+
+            <div id="inner-hedden" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
+
+            </div>
+        </section>
+        <!-- Open the modal using ID.showModal() method -->
+        
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle p-4">
+        <div class="modal-box">
+            <div id="for-Img" class="flex justify-center items-center bg-blue-100 py-8">
+
+            </div>
+            <h3 id="ph_name" class="font-bold text-2xl my-4"></h3>
+            <div id="ph-deta" class="space-y-2">
+
+            </div>
+            <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-secondary">Close</button>
+            </form>
+            </div>
+        </div>
+        </dialog>
+    </main>
+    <footer class="bg-blue-50 py-12">
+        <div class="container mx-auto">
+            <div>
+                <div class="flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold text-center md:text-left">Hot <span class="text-pink-500">Gadget</span></h2>
+                        <p>You can definitely work.</p>
+
+                    </div>
+                    <div class="flex justify-center items-center gap-4">
+                        <a href=""><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href=""><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href=""><i class="fab fa-instagram text-2xl"></i></a>
+                        <button class="btn btn-primary">Join Premium</button>
+                    </div>
+
+                </div>
+                <hr class="my-8">
+                <div class="grid px-2 md:px-0 grid-cols-2 md:grid-cols-4 justify-center items-center gap-6">
+                    <ul class="space-y-2">
+                        <a href="" class="no-underline block font-bold"><li>Product</li></a>
+                        <a href="" class="no-underline block"><li>Browse jobs</li></a>
+                        <a href="" class="no-underline block"><li>Remote jobs</li></a>
+                        <a href="" class="no-underline block"><li>Startup jobs</li></a>
+                        <a href="" class="no-underline block"><li>Company jobs</li></a>
+                    </ul>
+                    <ul class="space-y-2 text-right md:text-left">
+                        <a href="" class="no-underline block font-bold"><li>Popular</li></a>
+                        <a href="" class="no-underline block"><li>UIUX Design</li></a>
+                        <a href="" class="no-underline block"><li>Product Design</li></a>
+                        <a href="" class="no-underline block"><li>Back-End Developer</li></a>
+                        <a href="" class="no-underline block"><li>Front-End Developer</li></a>
+                    </ul>
+                    <ul class="space-y-2 text-left md:text-right">
+                        <a href="" class="no-underline block font-bold"><li>Resource</li></a>
+                        <a href="" class="no-underline block"><li>Faq</li></a>
+                        <a href="" class="no-underline block"><li>Support</li></a>
+                        <a href="" class="no-underline block"><li>Privacy Policy</li></a>
+                        <a href="" class="no-underline block"><li>Terms of Service</li></a>
+                    </ul>
+                    <ul class="space-y-2 text-right">
+                        <a href="" class="no-underline block font-bold"><li>Company</li></a>
+                        <a href="" class="no-underline block"><li>About Us</li></a>
+                        <a href="" class="no-underline block"><li>Contact Us</li></a>
+                        <a href="" class="no-underline block"><li>Career Tips</li></a>
+                        <a href="" class="no-underline block"><li>Careers</li></a>
+                    </ul>
+
+                </div>
+            </div>
+            <p class="text-center mt-12 text-gray-400">&copy; 2024 YousofAli. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
